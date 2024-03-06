@@ -1,0 +1,122 @@
+@media (max-width: 991px) {
+    .header {
+        justify-content: space-around; 
+        &__logo {
+            width: 230px;
+        }
+    }  
+    .promo {
+        padding-bottom: 0;
+        &__wrapper {
+            align-items: center;
+        }
+        &__header {
+            font-size: 40px;
+            line-height: 42px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #ffffff;
+                }
+        &__subheader {
+            font-size: 22px;
+            line-height: 24px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+        &__link {
+            margin-top: 35px;
+        }
+    }
+    .title {
+        font-size: 28px;
+    }
+    .advantages {   
+        &__wrapper {
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        &_item {
+            width:300px ;
+        }
+        &__text {
+            margin: 26px auto 0 auto;
+            width: 250px;
+            text-align: center;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .header {
+        justify-content: space-around; 
+        align-items: flex-start;
+        &__logo {
+            width: 200px;
+        }
+        &__official {
+            font-size: 11px;
+            span {
+                font-size: 16px;
+            }
+        }
+        &__phone {
+            font-size: 17px;
+            margin-bottom: 7px;
+        } 
+    } 
+    .promo {
+        padding-bottom: 0;
+        &__wrapper {
+            margin-top: 85px;
+            align-items: center;
+        }
+        &__header {
+            font-size: 38px;
+                }
+        &__subheader {
+            font-size: 20px;
+        }
+        &__link {
+            margin-top: 45px;
+            display: block;
+            padding: 10px 10px;
+        }
+    }       
+    .advantages {   
+        padding: 47px 0 81px 0;
+        &__wrapper {
+            margin-top: 50px;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }         
+        &_item {
+            width: 256px;
+            &:nth-child(3) {
+                margin-top: 30px;
+            }
+            
+        }
+        &__icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto;
+            }
+        
+        &__title {
+            margin-top: 30px;    
+            font-size: 18px;
+            text-align: center;
+        }
+        &__text {
+            margin-top: 20px;
+            font-size: 14px;
+            
+            a {
+                color: $main-color;
+            }   
+        }
+    }
+} 
+ 
