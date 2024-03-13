@@ -65,5 +65,26 @@
 
 
 $(document).ready(function(){
-    $('.carousel__inner').slick();
+    $('.carousel__inner').slick({
+       // dots: true,                     //"dots" - кружочки внизу, их можно застилизовать.
+        speed: 300,
+        slidesToShow: 1,               //  "slidesToShow" - сколько слайдов показывать за раз.
+        variableWidth: true,          // "variableWidth" - что бы слайдер сам пдстраивал картинки разной высоты внутри слайдера.
+        //autoplay: true,            // автопереключение слайдера.
+       // autoplaySpeed: 2000,
+        //fade: true,
+        //cssEase: 'linear'
+        //arrows: false               // включение и выключение стрелочек.
+        prevArrow: '<button type="button" class="slick-prev"><img src="icons/left_arrow.svg"></button>' ,  // добавляем свои стрелочки.
+        nextArrow: '<button type="button" class="slick-next"><img src="icons/right_arrow.svg"></button>' , // пути как пишем как будто мы в index html, т.к скрипты работают напрямую.
+        responsive: [                      // адаптируем слайдер для максимального разрешения в 768
+            {                             // копируем с сайта
+                breakpoint: 992,
+                settings: {
+                arrows: false,         // Для маленьких экранов убираем стрелочки и добавляем кружочки.
+                dots: true 
+                }
+            }
+        ]
+    });
   });
