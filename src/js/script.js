@@ -64,7 +64,7 @@
 //logging(4, 5);                        // Теперь вызываем функцию
 
 
-$(document).ready(function(){
+$(document).ready(function(){       //$(document).ready(function(){  }); - прописывается только 1 раз. Дальше уже всё пишется внутрь её.
     $('.carousel__inner').slick({
        // dots: true,                     //"dots" - кружочки внизу, их можно застилизовать.
         speed: 300,
@@ -87,4 +87,20 @@ $(document).ready(function(){
             }
         ]
     });
+
+    $('ul.catalog__tabs').on('click', 'li:not(catalog__tab_active)', function() {
+        $(this) 
+          .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
+          .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
+      });
   });
+
+  // Берём все теги "ul" с классом ".catalog__tabs" и кликаем в нём по "li" , у которых НЕ будет класс "catalog__tab_active"
+  // "(this)" - это тот элемент, на который мы нажали. И для этого "li" на который мы нажали и которого нет класса активности,
+  // для него добавляем класс активности ".addClass('catalog__tab_active')". Дальше, все соседние классы ".siblings()"
+  // удаляют класс активности ".removeClass('catalog__tab_active')", если он у них присутствовал.
+  //Дальше берём ближайший элемент "div", блок(у нас это "container", но можно было обернуть отдельно всю структуру с табами в какой то блок)
+  // ".closest('div.container')" и находим там блок "catalog__content" - ".find('div.catalog__content')".
+  //Убираем у этого блока класс активности - ".removeClass('catalog__content_active')".
+  //".eq($(this).index())" - эта часть команды получает номер элемента, на который мы нажали.Нажали на 2ой таб - будет индекс 2 и т.д
+  // И для соответствующего индеса назначается соответствующий номер контента, которому даём класс активности.
