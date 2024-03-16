@@ -93,7 +93,7 @@ $(document).ready(function(){       //$(document).ready(function(){  }); - пр�
           .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
           .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
       });
-  });
+  
 
   // Берём все теги "ul" с классом ".catalog__tabs" и кликаем в нём по "li" , у которых НЕ будет класс "catalog__tab_active"
   // "(this)" - это тот элемент, на который мы нажали. И для этого "li" на который мы нажали и которого нет класса активности,
@@ -104,3 +104,51 @@ $(document).ready(function(){       //$(document).ready(function(){  }); - пр�
   //Убираем у этого блока класс активности - ".removeClass('catalog__content_active')".
   //".eq($(this).index())" - эта часть команды получает номер элемента, на который мы нажали.Нажали на 2ой таб - будет индекс 2 и т.д
   // И для соответствующего индеса назначается соответствующий номер контента, которому даём класс активности.
+    
+   // $('.catalog-item__link').each(function(i){
+   //     $(this).on('click', function(e){
+   //         e.preventDefault();
+   //         $('.catalog-item__content').eq(i).toggleClass('catalog-item__content__active');
+   //         $('.catalog-item__list').eq(i).toggleClass('catalog-item__list__active');
+   //         })
+   //     });
+    
+
+    //Каждый "each()"Элемент, с классом ".catalog-item__link". для них будет выполняться "function".
+    //Выбранный элемент "$(this)", когда на него будут кликать ".on('click')", будет выполняться "function" "e.preventDefault()"
+    //(это отменит стандартное поведение браузера при переходе по ссылке.) и элемент с классом "catalog-item__content" будет переключать
+    //свой класс ".toggleClass()" на "catalog-item__content__active" (".toggleClass()" - переключение работает так - если класс есть,
+    //то он будет убираться, если нет, то будет добавляться).И всё тоже самое дальше для ".catalog-item__list".
+    //"eq(i)" - привязка по индексу. Говорим, что если кликаем по эелементу "i" , то переключение будет происходить только у элемента "i", 
+    // а не на всей странице.
+        // Дальше тоже самое для кнопки "НАЗАД"
+
+   // $('.catalog-item__back').each(function(i){
+   //     $(this).on('click', function(e){
+   //         e.preventDefault();
+   //         $('.catalog-item__content').eq(i).toggleClass('catalog-item__content__active');
+   //         $('.catalog-item__list').eq(i).toggleClass('catalog-item__list__active');
+  //          })
+//
+  //      });
+    
+
+    // ДАльше тоже самое, только оптимизированный вариант.
+    // Создаём функцию, которую назовём "toggleSlide" с аргументом "(item)"
+    // Теперь вызываем функцию и вместо "(item)" подставляем нужный нам элемент 
+    // toggleSlide('.catalog-item__link')
+    // toggleSlide('.catalog-item__back')
+    
+    function toggleSlide(item) {
+        $(item).each(function(i){
+            $(this).on('click', function(e){
+                e.preventDefault();
+                $('.catalog-item__content').eq(i).toggleClass('catalog-item__content__active');
+                $('.catalog-item__list').eq(i).toggleClass('catalog-item__list__active');
+                })
+    
+            });
+    };
+    toggleSlide('.catalog-item__link');
+    toggleSlide('.catalog-item__back');
+});    
