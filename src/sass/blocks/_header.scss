@@ -18,7 +18,11 @@
             display: block;     
             font-size: 18px;
             font-weight: 700;
-                    }
+            }
+        &_visible-sm {
+            display: none;
+        }
+    
     }
     &__phone {
         display: block;
