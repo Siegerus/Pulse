@@ -10,6 +10,9 @@
         left: 50%;
         transform: translateX(-50%);
         background-color: $main-color;
+        &_md-vision {
+            display: none;
+        }
     }
     &__addr {
         margin-bottom: 36px;
