@@ -15,6 +15,7 @@ gulp.task('server', function() {
     });
 
     gulp.watch("src/*.html").on('change', browserSync.reload);
+    //gulp.watch("src/sass/**/*.+(scss|sass)").on('change', browserSync.reload); // если запускать без 'styles'
 });
 
 gulp.task('styles', function() {
