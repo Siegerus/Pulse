@@ -16,6 +16,16 @@
         img {
             width: 100%;
         }
+        &_animated {    //модификатор для анимации // задаём анимацию
+            animation: heartbeat 0.8s ease infinite; // всё одной строкой . Миниму 2 первых параметра - название анимации и продолжительность
+            animation-name: heartbeat;         
+            animation-duration: 0.8s;              // время анимации
+            animation-timing-function: ease;    // тип тайминга анимации, описания в документации
+            animation-iteration-count: infinite; // продолжительность анимации
+            &:hover {
+                animation-play-state: paused;   // анимация будет становиться на паузу при наведении
+            }
+        }
     }
     &__title {
         margin-top: 38px;    

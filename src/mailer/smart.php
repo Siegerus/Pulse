@@ -14,7 +14,7 @@ $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers               // гуглим, если другая почта
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
 $mail->Username = 'ivanoff1siegerus@gmail.com';                 // Наш логин  // Это как бы мыло самого сайта, и всю инфу, которая будет вводиться на нём, будет пересылаться уже на нашу почту, которую указали ниже
-$mail->Password = 'dnjk jsax bpyx zywe';                           // Наш пароль от ящика // использовал пароль приложений
+$mail->Password = ;                           // Наш пароль от ящика // использовал пароль приложений
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465;                                    // TCP port to connect to        // тоже гуглим, у каждой почты свой
  
