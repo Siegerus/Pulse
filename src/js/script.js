@@ -309,11 +309,30 @@ $(document).ready(function(){       //$(document).ready(function(){  }); - пр�
     
           $('html, body').animate({
             scrollTop: $(hash).offset().top
-          }, 1500, function(){              //"1500" это скорость анимации 
+          }, 80, function(){              //"1500" это скорость анимации 
             window.location.hash = hash;
           });
         }
       });
+
+      /* $(window).on('click', function() {
+        $('label.error').fadeOut();
+      }) */
 }); 
+
+new WOW().init();              //Подключение Wow
+
+//wow = new WOW(             // настройка Wow. Кладём плагин в переменную
+//  {                                  
+//    boxClass:     'wow',      // 
+//    animateClass: 'animated', //
+//    offset:       0,          //
+//    mobile:       true,       //
+//    live:         true        //
+//  }
+//  )
+//  wow.init();           // запускаем переменную
+
+
 
 

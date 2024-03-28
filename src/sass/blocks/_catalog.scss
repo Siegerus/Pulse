@@ -137,6 +137,9 @@
                 transform: translateX(-100%); // А когда активен, то появляется по оси Х (слева).Так получится замещение контента
                 margin-left: 0;
             }
+            ul {
+                padding: 0;
+            }
             li {
                 position: relative;
                 font-size: 14px;
